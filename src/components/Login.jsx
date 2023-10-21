@@ -5,7 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
 
-  const {signInUser} = useContext(AuthContext);
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const navitage = useNavigate();
 
   const handleLogin = e => {
@@ -15,17 +15,29 @@ const Login = () => {
     console.log(email, password)
 
     signInUser(email, password)
-    .then(result => {
-      console.log(result.user)
-      e.target.reset();
-      navitage('/');
-    })
+      .then(result => {
+        console.log(result.user)
+        e.target.reset();
+        navitage('/');
+      })
 
-    .catch(error => {
-      console.error(error)
-    })
+      .catch(error => {
+        console.error(error)
+      })
 
   }
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(result => {
+        console.log(result.user)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+
+  }
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col">
@@ -54,8 +66,10 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center">New here?<Link to="/register" >
-          <button className="btn btn-link">Register</button>
+            <button className="btn btn-link">Register</button>
           </Link> </p>
+
+          <p className="text-center"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Google</button></p>
         </div>
       </div>
     </div>
