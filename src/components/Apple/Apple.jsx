@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import AppleCard from "./AppleCard";
 import Slider from "../Slider/Slider";
 
+
 const Apple = () => {
   
   const products = useLoaderData();

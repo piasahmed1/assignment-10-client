@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 
+
 const AppleDetails = () => {
   const phones = useLoaderData();
   console.log(phones);
   const { _id, name, brand, price, description, rating, image, url, category } = phones;
+
 
   return (
 
