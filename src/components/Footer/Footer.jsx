@@ -13,7 +13,6 @@ const Footer = () => {
       
     </nav> 
    
-   
   </footer>
 );
 };
