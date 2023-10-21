@@ -6,6 +6,4 @@
 ## Private and Public Routes
 ## Responsive Design
 ## sign in with google
-## All users
-
-
+## All users project

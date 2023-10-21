@@ -3,6 +3,7 @@ import BrandName from "../../components/BrandName/BrandName";
 import ExploreBrand from "../../components/Explore Brand/ExploreBrand";
 import Footer from "../../components/Footer/Footer";
 
+
 const Home = () => {
   return (
     <div>
